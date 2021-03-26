@@ -1,0 +1,19 @@
+{
+  "name": "twilio-nodejs-server",
+  "version": "1.0.0",
+  "description": "token generator for Twilio Video API ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MatheusEli/twilio-nodejs-server.git"
+  },
+  "author": "Matheus eli",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MatheusEli/twilio-nodejs-server/issues"
+  },
+  "homepage": "https://github.com/MatheusEli/twilio-nodejs-server#readme"
+}
