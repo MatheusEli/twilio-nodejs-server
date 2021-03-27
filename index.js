@@ -31,5 +31,5 @@ console.log(token.toJwt());
 
 
 app.get('/token', (req, res) => {
-    res.send(token.toJwt());
+    res.send({ token: token.toJwt() });
 });
