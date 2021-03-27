@@ -2,7 +2,7 @@ const express = require("express");
 const AccessToken = require('twilio').jwt.AccessToken;
 const app = express();
 
-const port = Process.env.PORT || 4000 ;
+const port = process.env.PORT || 4000 ;
 app.listen(port, () => console.log("servidor rodando na porta: "+port+"com sucesso!"));
 
 const VideoGrant = AccessToken.VideoGrant;
