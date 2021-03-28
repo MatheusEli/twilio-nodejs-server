@@ -1,6 +1,8 @@
 const express = require("express");
 const AccessToken = require('twilio').jwt.AccessToken;
 const app = express();
+const bodyParser = require('body-parser');
+app.use(express.urlencoded({extended: false}));
 
 const port = process.env.PORT || 4000 ;
 app.listen(port, () => console.log("servidor rodando na porta: "+port+"com sucesso!"));
@@ -19,7 +21,7 @@ app.get('/token/:room/:identity', (req, res) => {
     // Create an access token which we will sign and return to the client,
     // containing the grant we just created
     const token = new AccessToken(twilioAccountSid, twilioApiKey, twilioApiSecret);
-    token.identity = ''+req.params.identity;
+    token.identity = req.params.identity;
     const room = req.params.room;
     
     console.log(token.identity);
