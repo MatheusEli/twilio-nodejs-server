@@ -21,11 +21,6 @@ app.get('/token/:room/:identity', (req, res) => {
     const token = new AccessToken(twilioAccountSid, twilioApiKey, twilioApiSecret, {identity: req.params.identity});
     
     const room = req.params.room;
-
-    console.log('Room: '+room+' | Identity: '+identity);
-    
-    
-    token.identity = identity;
     
     // Create a Video grant which enables a client to use Video 
     // and limits access to the specified Room (DailyStandup)
