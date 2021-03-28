@@ -22,6 +22,7 @@ app.get('/token/:room/:identity', (req, res) => {
     
     const room = req.params.room;
     
+    console.log(token.identity);
     // Create a Video grant which enables a client to use Video 
     // and limits access to the specified Room (DailyStandup)
     const videoGrant = new VideoGrant({
@@ -34,5 +35,5 @@ app.get('/token/:room/:identity', (req, res) => {
     // Serialize the token to a JWT string
     console.log(token.toJwt());
 
-    res.send({ token: token.toJwt() });
+    res.send({ token: token.toJwt(), identity: token.identity });
 });
