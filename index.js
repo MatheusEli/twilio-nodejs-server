@@ -2,7 +2,7 @@ const express = require("express");
 const AccessToken = require('twilio').jwt.AccessToken;
 const app = express();
 const bodyParser = require('body-parser');
-app.use(express.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({extended: false}));
 
 const port = process.env.PORT || 4000 ;
 app.listen(port, () => console.log("servidor rodando na porta: "+port+"com sucesso!"));
