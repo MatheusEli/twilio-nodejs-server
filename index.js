@@ -18,8 +18,8 @@ app.get('/token/:room/:identity', (req, res) => {
     
     // Create an access token which we will sign and return to the client,
     // containing the grant we just created
-    const token = new AccessToken(twilioAccountSid, twilioApiKey, twilioApiSecret, {identity: req.params.identity});
-    
+    const token = new AccessToken(twilioAccountSid, twilioApiKey, twilioApiSecret);
+    token.identity = 'Matheus eli';
     const room = req.params.room;
     
     console.log(token.identity);
