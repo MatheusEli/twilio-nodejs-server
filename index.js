@@ -8,7 +8,7 @@ app.listen(port, () => console.log("servidor rodando na porta: "+port+"com suces
 
 
 app.get('/token/:room/:identity', (req, res) => {
-    
+
     const VideoGrant = AccessToken.VideoGrant;
     
     // Used when generating any kind of Access Token
@@ -18,10 +18,9 @@ app.get('/token/:room/:identity', (req, res) => {
     
     // Create an access token which we will sign and return to the client,
     // containing the grant we just created
-    const token = new AccessToken(twilioAccountSid, twilioApiKey, twilioApiSecret);
+    const token = new AccessToken(twilioAccountSid, twilioApiKey, twilioApiSecret, {identity: req.params.identity});
     
     const room = req.params.room;
-    const identity = req.params.identity;
 
     console.log('Room: '+room+' | Identity: '+identity);
     
